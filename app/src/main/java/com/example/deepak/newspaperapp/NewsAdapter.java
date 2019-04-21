@@ -58,9 +58,13 @@ public class NewsAdapter extends ArrayAdapter<News> {
         ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
 //        Uri imageUri = Uri.parse(currentNews.getNewsUrl());
 //        imageView.setImageURI(imageUri);
-        Picasso.get()
-                .load(currentNews.getImageUrl())
-                .into(imageView);
+            Picasso.get()
+                    .load(currentNews.getImageUrl())
+                    .placeholder(R.drawable.download)
+                    .fit()
+                    .centerCrop()
+                    .into(imageView);
+
         return listItemView;
     }
 

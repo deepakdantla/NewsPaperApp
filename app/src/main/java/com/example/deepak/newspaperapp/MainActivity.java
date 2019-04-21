@@ -37,12 +37,19 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView listView = findViewById(R.id.list_view);
+        /*creating the object of connectivity manager which helps in getting info
+          about the network connection  */
         ConnectivityManager connectivityManager = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
 
+        //networkinfo stores the info about the network status
         final NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        //find the empty view in the layout
         emptyView = findViewById(R.id.empty_view);
+
+        ListView listView = findViewById(R.id.list_view);
+        listView.setEmptyView(emptyView);
         progressBar = findViewById(R.id.pbar);
         noInternet = findViewById(R.id.no_internet);
         noInternet.setVisibility(View.GONE);
@@ -81,7 +88,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         if (articlesObtained != null && !articlesObtained.isEmpty()) {
             progressBar.setVisibility(View.GONE);
             noInternet.setVisibility(View.GONE);
-            newsAdapter.addAll(articlesObtained);
+            if (articlesObtained != null && !articlesObtained.isEmpty()) {
+                newsAdapter.addAll(articlesObtained);
+            }
+
         }
     }
 
