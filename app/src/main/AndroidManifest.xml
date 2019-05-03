@@ -12,16 +12,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignUpActivity">
-        </activity>
+        <activity android:name=".ResetPassword"></activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".Sports" />
+        <activity android:name=".General" />
+        <activity android:name=".Health" />
+        <activity android:name=".Technology" />
+        <activity android:name=".Science" />
+        <activity android:name=".Business" />
         <activity
-            android:name=".LoginActivity">
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="Headlines">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="example"
+                    android:scheme="myapp"
+                    android:pathPrefix="/login"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -1,11 +1,7 @@
 package com.example.deepak.newspaperapp;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.Uri;
 import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +12,6 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public class NewsAdapter extends ArrayAdapter<News> {
 
@@ -56,14 +51,12 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
         // Find the TextView in the list_item_layout.xml layout with the ID
         ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
-//        Uri imageUri = Uri.parse(currentNews.getNewsUrl());
-//        imageView.setImageURI(imageUri);
-            Picasso.get()
-                    .load(currentNews.getImageUrl())
-                    .placeholder(R.drawable.download)
-                    .fit()
-                    .centerCrop()
-                    .into(imageView);
+        Picasso.get()
+                .load(currentNews.getImageUrl())
+                .placeholder(R.drawable.download)
+                .fit()
+                .centerCrop()
+                .into(imageView);
 
         return listItemView;
     }

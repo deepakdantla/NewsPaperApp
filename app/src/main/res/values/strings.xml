@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">NewsPaperApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="back"><![CDATA[<< back]]></string>
+    <string-array name="newsCategory">
+        <item>Select category</item>
+        <item>Business</item>
+        <item>General</item>
+        <item>Health</item>
+        <item>Science</item>
+        <item>Sports</item>
+        <item>Technology</item>
+    </string-array>
 </resources>
